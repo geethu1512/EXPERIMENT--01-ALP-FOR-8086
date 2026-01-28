@@ -76,11 +76,56 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 
 
 ## Programs for arithmetic  operations
+~~~
+org 100h
 
-<img width="1246" height="687" alt="Screenshot 2026-01-28 084007" src="https://github.com/user-attachments/assets/cfb1c3e6-10dc-4545-88f7-ef466c4b27b1" />
+MOV AX, 4D33H;
+MOV BX, 0A211H;
+ADD AX, BX;
+MOV [5000H], AX;
 
-<img width="976" height="596" alt="EX 1 program" src="https://github.com/user-attachments/assets/9ea06d48-2d0a-4688-a3d0-5ae47302928a" />
+MOV AX,3452H;
+MOV CX,1234H;
+SUB AX, CX;
+MOV [5002H],AX;
 
+MOV AX,5555H;
+MOV BX, 50H;
+MUL BX;
+MOV [5004H],AX;
+
+MOV AX, OABCDH;
+MOV CX,05H;
+DIV AX;
+[5006H],AX;
+
+ret
+~~~~
+
+~~~
+org 100h
+MOV AX,2345H;
+MOV BX,2134H;
+AND AX,BX; 
+MOV [4000H],AX; 
+
+NOT AX;
+MOV [4002H],AX;
+
+MOV AX,2345H;
+OR AX,BX;
+MOV [4004H],AX; 
+
+NOT AX;
+MOV [4006H],AX; 
+
+MOV AX,2345H;
+NOT AX;
+MOV [4008H],AX;
+
+
+ret
+~~~
 
 ## Output  
 <img width="1312" height="975" alt="Ex1" src="https://github.com/user-attachments/assets/4a4c980b-64e5-442c-9316-f55571f71bfa" />
